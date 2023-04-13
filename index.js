@@ -7,13 +7,13 @@ function addSquares(size) {
   width = nonogramContainer.offsetWidth;
 
   for (let i = 0; i < size; i++) {
-    let rowName = `${i}`;
+    let rowName = `board-row-${i}`;
     let currentRow = document.createElement('div');
     currentRow.id = rowName;
     currentRow.className = 'nonogram-row';
     nonogramContainer.appendChild(currentRow);
     for (let j = 0; j < size; j++) {
-      let squareName = `${i}-${j}`;
+      let squareName = `cell-${i}-${j}`;
       let currentSquare = document.createElement('div')
       currentSquare.id = squareName;
       currentSquare.className = 'nonogram-cell';
@@ -97,18 +97,63 @@ function generateHints() {
     colHints.push(hints);
   });
 
-  console.log(rowHints);
-  console.log(colHints);
+  return [rowHints, colHints];
 }
 
+function displayHints(hints) {
+  let rowHints = hints[0];
+  let colHints = hints[1];
+
+  const sideHintsContainer = document.querySelector('#nonogram-side-hints');
+  const topHintsContainer = document.querySelector('#nonogram-top-hints');
+  const nonogramContainer = document.querySelector('#nonogram-inner-container');
+  height = nonogramContainer.offsetWidth;
+
+  for (let i = 0; i < rowHints.length; i++) {
+    let rowName = `hint-row-${i}`;
+    let rowHint = document.createElement('div');
+    rowHint.id = rowName;
+    rowHint.className = 'rowHint';
+    sideHintsContainer.appendChild(rowHint);
+    let hintText = '';
+    rowHints[i].forEach(num => {
+      hintText += num.toString();
+      hintText += '&nbsp;&nbsp;';
+    });
+    rowHint.innerHTML = hintText;
+    rowHint.setAttribute('style', `height: ${height/rowHints.length}px;`);
+
+    let colName = `hint-col-${i}`;
+    let colHint = document.createElement('div');
+    colHint.id = colName;
+    colHint.className = 'colHint';
+    topHintsContainer.appendChild(colHint);
+    hintText = '';
+    colHints[i].forEach(num => {
+      hintText += num.toString();
+      hintText += ' ';
+    });
+    colHint.innerHTML = hintText;
+    //colHint.setAttribute('style', `height: ${height/rowHints.length}px;`);
+    
+  }
+
+
+  
+
+  
+}
 
 function calculateSolvability() {
   // figure out if the nonogram has more than 1 
   // solution and how hard it will be to solve
 }
 
-addSquares(20);
+addSquares(15);
 
 fillSquares(50);
 
-generateHints();
+const hints = generateHints();
+
+displayHints(hints);
+

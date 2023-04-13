@@ -1,77 +1,98 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
   }
   
   .header {
-  background-color: #333;
-  color: white;
-  height: 3rem;
-  padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    height: 3rem;
+    padding: 0.5rem;
   }
   
   /* Center the main content */
   #wide-body {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
   }
   
   /* Style the nonogram puzzle */
   #nonogram-outer-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
   }
   
   #nonogram-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5rem;
-  background-color: #ccc;
+    display: flex;
+    align-items: flex-end;
+    background-color: #ccc;
   }
   
   #nonogram-top-hints {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 7rem;
+    padding: 0 0.5rem;
   }
   
+
+  #nonogram-filler {
+    display: flex;
+    width: 7rem;
+    height: 7rem;
+  }
+
   #nonogram-bottom {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
   }
   
   #nonogram-side-hints {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
-  background-color: #ccc;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 7rem;
+    background-color: #ccc;
+    color: black;
+    padding-top: 0.5rem;
+  }
+
+  .rowHint {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .colHint {
+    display: flex;
+    font-size: 14px;
+    flex-wrap: wrap;
+    width: 5px;
   }
   
   #nonogram-inner-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 400px;
-  color: black;
-  background-color: #fff;
-  border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    color: black;
+    background-color: #fff;
+    border: 1px solid #ccc;
   }
   
   /* Add some styles for the nonogram cells */
   .nonogram-cell {
-  border: 1px solid #ccc;
-  background-color: #fff;
-  flex-grow: 1;
-  box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    flex-grow: 1;
+    box-sizing: border-box;
   }
 
   .filled {
@@ -79,32 +100,32 @@ body {
   }
   
   .nonogram-cell.active {
-  background-color: #000;
+    background-color: #000;
   }
   
   .nonogram-cell.inactive {
-  background-color: #ccc;
+    background-color: #ccc;
   }
   
   /* Add some styles for the nonogram hints */
   .nonogram-hint {
-  margin: 5px;
-  font-size: 12px;
-  color: #333;
+    margin: 5px;
+    font-size: 12px;
+    color: #333;
   }
   
   /* Add some styles for the nonogram controls */
   .nonogram-control {
-  margin: 10px;
-  padding: 5px 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  cursor: pointer;
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
   }
   
   .nonogram-control:hover {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
   }
 
 
