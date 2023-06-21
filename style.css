@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 4rem;
+    margin-bottom: 10rem;
   }
   
   #nonogram-top {
@@ -95,40 +96,10 @@ body {
     box-sizing: border-box;
   }
 
-  .filled {
+  .nonogram-cell.filled {
     background-color: black;
   }
   
-  .nonogram-cell.active {
-    background-color: #000;
-  }
-  
-  .nonogram-cell.inactive {
-    background-color: #ccc;
-  }
-  
-  /* Add some styles for the nonogram hints */
-  .nonogram-hint {
-    margin: 5px;
-    font-size: 12px;
-    color: #333;
-  }
-  
-  /* Add some styles for the nonogram controls */
-  .nonogram-control {
-    margin: 10px;
-    padding: 5px 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .nonogram-control:hover {
-    background-color: #f2f2f2;
-  }
-
-
   .nonogram-row {
     display: flex;
   }
@@ -137,3 +108,65 @@ body {
     padding: 0.5rem;
     background-color: #ccc;
   }
+
+
+/* Duplicate board for writing solving formula */
+
+
+#nonogram-top-hints2 {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 7rem;
+  padding: 0 0.5rem;
+}
+
+#nonogram-bottom2 {
+  display: flex;
+  flex-direction: row;
+}
+
+#nonogram-side-hints2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 7rem;
+  background-color: #ccc;
+  color: black;
+  padding-top: 0.5rem;
+}
+
+#nonogram-inner-container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  color: black;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#nonogram-middle-container2 {
+  padding: 0.5rem;
+  background-color: #ccc;
+}
+
+.nonogram-cell2 {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.nonogram-cell2.filled {
+  background-color: black;
+}
+
+.nonogram-cell2.empty {
+  background-color: #ccc;
+  border-color: white;
+}
